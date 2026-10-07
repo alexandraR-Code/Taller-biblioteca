@@ -8,20 +8,21 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Libro libro = new Libro();
-		libro.autor = "J.J. Benitez";
-		libro.titulo = "Caballo de troya";
-		libro.anio = 2010;
+		Libro libro = new Libro("J.J. Benitez", "Novelas de ciencia ficcion historica ", "Caballo de troya", 45.0, 2010,
+				"Editorial planeta");
+		libro.prestar();
+		System.out.println(libro.toString());
+		libro.devolverLibro();
+		libro.imprimir();
+		System.out.println(libro);
 
-		System.out.println(libro.autor + " " + libro.titulo + " " + libro.anio);
+		Libro libro2 = new Libro();
+		libro2.setTitulo("Harry Potter");
+		System.out.println(libro2);
+		libro2.devolverLibro();
 
-		Usuario usuario = new Usuario();
-		usuario.nombre = "Carolina";
-		usuario.apellido = "Ramirez";
-		usuario.cedula = "1048850135";
-		usuario.idUsuario = 2525;
-
-		System.out.println(usuario.nombre + " " + usuario.apellido + " " + usuario.cedula + " " + usuario.idUsuario);
+		Usuario usuario = new Usuario("Carolina", "Ramirez", "1048850135", 2026);
+		System.out.println(usuario);
 
 	}
 
