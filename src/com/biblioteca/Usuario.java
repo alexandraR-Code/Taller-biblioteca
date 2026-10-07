@@ -2,6 +2,7 @@ package com.biblioteca;
 
 import java.util.ArrayList;
 
+//Persona que usa la biblioteca: guarda sus datos y la lista de libros que tiene prestados
 public class Usuario {
 
 	// Atributos
@@ -10,7 +11,7 @@ public class Usuario {
 	private String apellido;
 	private String cedula;
 	private int idUsuario;
-	private ArrayList<Libro> librosPrestados;
+	private ArrayList<Libro> librosPrestados; // Se crea en los constructores para evitar NullPointerException
 
 	// Metodos getter y setter
 	public String getNombre() {
@@ -45,17 +46,19 @@ public class Usuario {
 		this.idUsuario = idUsuario;
 	}
 
+	// Biblioteca lo usa para contar cuántos libros tiene el usuario (máximo 3)
 	public ArrayList<Libro> getLibrosPrestados() {
 		return librosPrestados;
 	}
 
-	// Constructor vacio
+	// Constructor vacío: datos sin llenar y lista de libros vacía.
 	public Usuario() {
 		this.librosPrestados = new ArrayList<Libro>();
 
 	}
 
-	// Constructor inicializado
+	// Constructor con datos: guarda los datos recibidos y crea la lista de libros
+	// vacía.
 	public Usuario(String nombre, String apellido, String cedula, int idUsuario) {
 		this.nombre = nombre; // "Ana" si se asigna un nombre directamente aqui todos los objetos tendra este
 		this.apellido = apellido; // mismo nombre
@@ -64,24 +67,25 @@ public class Usuario {
 		this.librosPrestados = new ArrayList<Libro>();
 	}
 
-	// Metodo toString
+	// Muestra los datos del usuario y los libros que tiene prestados
 	@Override
 	public String toString() {
 		return "Usuario [nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", idUsuario="
 				+ idUsuario + ", \n librosPrestados=" + librosPrestados + "]";
 	}
 
-	// Metodo saludar
+	// Imprime un saludo con el nombre del usuario.
 	public void saludar() {
 		System.out.println("Hola " + getNombre());
 	}
 
-	// Tomar libro
+	// Agrega un libro a la lista del usuario. La llama Biblioteca.prestarLibro.
 	public void tomarLibro(Libro libro) {
 		librosPrestados.add(libro);
 	}
 
-	// devolver libro
+	// Quita el libro de la lista del usuario (no cambia el estado "prestado" del
+	// libro).
 	public void devolverLibro(Libro libro) {
 		librosPrestados.remove(libro);
 	}

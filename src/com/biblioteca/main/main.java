@@ -3,13 +3,14 @@ package com.biblioteca.main;
 import com.biblioteca.Libro;
 import com.biblioteca.Usuario;
 
+//Prueba manual de Libro y Usuario: constructores, prestar, devolver, toString y saludar
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Libro libro = new Libro(2,"J.J. Benitez", "Novelas de ciencia ficcion historica ", "Caballo de troya", 45.0, 2010,
-				"Editorial planeta");
+		Libro libro = new Libro(2, "J.J. Benitez", "Novelas de ciencia ficcion historica ", "Caballo de troya", 45.0,
+				2010, "Editorial planeta");
 		libro.prestar();
 		System.out.println(libro.toString());
 		libro.devolverLibro();

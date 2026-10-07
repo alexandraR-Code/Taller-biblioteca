@@ -1,5 +1,6 @@
 package com.biblioteca;
 
+//Representa un libro. Biblioteca los guarda en una lista y Usuario guarda los que tiene prestados.
 public class Libro {
 	// Atributos
 	private int id;
@@ -10,11 +11,11 @@ public class Libro {
 	private int anio;
 	private String isbn;
 	private String editorial;
-	private boolean prestado;
+	private boolean prestado; // true = prestado, false = disponible
 
 	// Metodo getter y setter
-	// Getterr: metodo de ACCESO que devuelve un valor
-	// setteer: metodo de MODIFICACION, permite asignar o cambiar un valor
+	// Getter: devuelve el valor de un atributo (isPrestado es el del boolean).
+	// Setter: asigna o cambia el valor de un atributo.
 	public int getId() {
 		return id;
 	}
@@ -87,12 +88,14 @@ public class Libro {
 		this.prestado = prestado;
 	}
 
-	// constructor vacio
+	// Constructor vacío: crea el libro sin datos (textos en null, números en 0,
+	// prestado en false).
 	public Libro() {
 
 	}
 
-	// Coonstructor Inicializado
+	// Constructor con datos: guarda lo recibido. El isbn no se recibe, así que
+	// queda en null.
 	public Libro(int id, String autor, String genero, String titulo, double precio, int anio, String editorial) {
 		this.id = id;
 		this.autor = autor;
@@ -105,12 +108,12 @@ public class Libro {
 								// estado
 	}
 
-	// Metodo prestar
+	// Marca el libro como prestado. La llama Biblioteca.prestarLibro.
 	public void prestar() {
 		prestado = true;
 	}
 
-	// Metodo devolver libro
+	// Marca el libro como disponible. Si no estaba prestado, solo avisa.
 	public void devolverLibro() {
 		if (prestado == true) { // se iguala al valor que se asigno en el constructor "false"
 			prestado = false;
@@ -120,13 +123,12 @@ public class Libro {
 		}
 	}
 
-	// Metodo Imprimir
+	// Muestra solo el título del libro.
 	public void imprimir() {
 		System.out.println("Titulo: " + getTitulo());
 	}
 
-	// Metodo toString es una funcion incorporada que devuelve una representacion en
-	// forma de texto (Cadeena de caracteres o String)
+	// Convierte el libro en texto para imprimirlo con System.out.println(libro).
 	@Override
 	public String toString() {
 		return "Libro=id: " + id + " " + "autor: " + autor + " " + " genero: " + genero + " " + " titulo: " + titulo
