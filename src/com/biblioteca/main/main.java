@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Libro libro = new Libro("J.J. Benitez", "Novelas de ciencia ficcion historica ", "Caballo de troya", 45.0, 2010,
+		Libro libro = new Libro(2,"J.J. Benitez", "Novelas de ciencia ficcion historica ", "Caballo de troya", 45.0, 2010,
 				"Editorial planeta");
 		libro.prestar();
 		System.out.println(libro.toString());
@@ -22,6 +22,7 @@ public class Main {
 		libro2.devolverLibro();
 
 		Usuario usuario = new Usuario("Carolina", "Ramirez", "1048850135", 2026);
+		usuario.saludar();
 		System.out.println(usuario);
 
 	}

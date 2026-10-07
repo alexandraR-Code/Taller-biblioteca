@@ -1,19 +1,28 @@
 package com.biblioteca;
 
 public class Libro {
-//---Atributos------------------------------------------
-
+	// Atributos
+	private int id;
 	private String autor;
 	private String genero;
 	private String titulo;
 	private double precio;
 	private int anio;
+	private String isbn;
 	private String editorial;
 	private boolean prestado;
 
-//---Metodo getter y setter-------------------------------
+	// Metodo getter y setter
 	// Getterr: metodo de ACCESO que devuelve un valor
 	// setteer: metodo de MODIFICACION, permite asignar o cambiar un valor
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getAutor() {
 		return autor;
 	}
@@ -54,6 +63,14 @@ public class Libro {
 		this.anio = anio;
 	}
 
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
 	public String getEditorial() {
 		return editorial;
 	}
@@ -70,9 +87,14 @@ public class Libro {
 		this.prestado = prestado;
 	}
 
-//---------------------------------------------------------
+	// constructor vacio
+	public Libro() {
+
+	}
+
 	// Coonstructor Inicializado
-	public Libro(String autor, String genero, String titulo, double precio, int anio, String editorial) {
+	public Libro(int id, String autor, String genero, String titulo, double precio, int anio, String editorial) {
+		this.id = id;
 		this.autor = autor;
 		this.genero = genero;
 		this.titulo = titulo;
@@ -83,19 +105,11 @@ public class Libro {
 								// estado
 	}
 
-//------------------------------------------------------------
-	// constructor vacio
-	public Libro() {
-
-	}
-
-//--------------------------------------------------------------
 	// Metodo prestar
 	public void prestar() {
 		prestado = true;
 	}
 
-//-------------------------------------------------------------
 	// Metodo devolver libro
 	public void devolverLibro() {
 		if (prestado == true) { // se iguala al valor que se asigno en el constructor "false"
@@ -106,22 +120,18 @@ public class Libro {
 		}
 	}
 
-//---------------------------------------------------------------------------
 	// Metodo Imprimir
 	public void imprimir() {
 		System.out.println("Titulo: " + getTitulo());
 	}
-//-------------------------------------------------------------
+
 	// Metodo toString es una funcion incorporada que devuelve una representacion en
 	// forma de texto (Cadeena de caracteres o String)
-
 	@Override
 	public String toString() {
-		return "Libro=" + " " + "autor: " + " " + autor + " " + " genero: " + " " + genero + " " + " titulo: " + " "
-				+ titulo + " " + " precio: " + " " + precio + "  " + " anio: " + " " + anio + " editorial: " + " "
-				+ editorial + " " + " prestado: " + prestado;
+		return "Libro=id: " + id + " " + "autor: " + autor + " " + " genero: " + genero + " " + " titulo: " + titulo
+				+ " " + " precio: " + precio + "  " + " anio: " + anio + " editorial: " + editorial + " "
+				+ " prestado: " + prestado;
 	}
-
-//------------------------------------------------------------------
 
 }
