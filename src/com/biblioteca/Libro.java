@@ -107,6 +107,16 @@ public class Libro {
 		this.prestado = false; // No est adentro de los parametros pues ya se le da de manera automatica es
 								// estado
 	}
+	public Libro( String autor, String genero, String titulo, double precio, int anio, String editorial) {
+		this.autor = autor;
+		this.genero = genero;
+		this.titulo = titulo;
+		this.precio = precio;
+		this.anio = anio;
+		this.editorial = editorial;
+		this.prestado = false; // No est adentro de los parametros pues ya se le da de manera automatica es
+								// estado
+	}
 
 	// Marca el libro como prestado. La llama Biblioteca.prestarLibro.
 	public void prestar() {

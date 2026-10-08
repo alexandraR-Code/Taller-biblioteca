@@ -90,6 +90,7 @@ public class BibliotecaTest {
 		// Prueba de calcularPrecioMinimo: libros desde 25.0.
 		System.out.println("Ejercicio de Mostrsr precio minimo \n");
 		biblioteca.calcularPrecioMinimo(25.0);
+		
 
 	}
 
